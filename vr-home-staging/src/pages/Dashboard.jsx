@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
-import { stats, visits } from "../data/mockData";
-import StatCard from "../components/StatCard";
-import VisitCard from "../components/VisitCard";
+import { stats, visits } from "../data/mockData.js";
+import StatCard from "../components/StatCard.jsx";
+import VisitCard from "../components/VisitCard.jsx";
 
 export default function Dashboard() {
   const navigate = useNavigate();

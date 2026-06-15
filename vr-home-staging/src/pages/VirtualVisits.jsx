@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Search, SlidersHorizontal, Plus, MapPin } from "lucide-react";
-import { visits } from "../data/mockData";
-import StatusBadge from "../components/StatusBadge";
-import UserAvatars from "../components/UserAvatars";
+import { visits } from "../data/mockData.js";
+import StatusBadge from "../components/StatusBadge.jsx";
+import UserAvatars from "../components/UserAvatars.jsx";
 
 export default function VirtualVisits() {
   const [query, setQuery] = useState("");
