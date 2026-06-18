@@ -35,7 +35,6 @@ body {
 
 .navbar {
   height: 72px;
-  width: 1200px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -57,10 +56,12 @@ body {
   backdrop-filter: blur(16px);
   border-radius: 20px;
   padding: 16px;
-  margin-right: 20px;
+  margin-right:  20px;
   border: 1px solid rgba(255,255,255,0.4);
   box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+  flex-shrink: 0;
 }
+
 
 .app-gradient {
   min-height: 100vh;
@@ -73,9 +74,7 @@ body {
 
 /* Outer glass shell */
 .app-shell {
-  max-width: 1320px;
-  margin: 0 auto;
-  overflow: hidden;
+  width: 100%;
   min-height: calc(100svh - 40px);
   display: flex;
   flex-direction: column;
@@ -85,6 +84,7 @@ body {
   display: flex;
   gap: 20px; 
   flex: 1;
+  width: 100%;
 }
 
 .app-main {
@@ -95,6 +95,7 @@ body {
   padding: 24px;
   border: 1px solid rgba(255,255,255,0.4);
   box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+  display: block;
 }
 
 /* Floating chat button */
