@@ -7,14 +7,14 @@ export default function VisitCard({ visit, onClick }) {
     <div
       onClick={onClick}
       style={{
-        background: "#fff",
+        background: "rgba(255,255,255,0.30)",
+        boxShadow: "0 8px 24px rgba(0,0,0,0.05)",
         borderRadius: "16px",
         padding: "14px 20px",
         display: "flex",
         alignItems: "center",
         gap: "16px",
         cursor: "pointer",
-        boxShadow: "0 1px 3px rgba(0,0,0,0.05)",
       }}
       onMouseEnter={(e) => (e.currentTarget.style.boxShadow = "0 4px 12px rgba(0,0,0,0.10)")}
       onMouseLeave={(e) => (e.currentTarget.style.boxShadow = "0 1px 3px rgba(0,0,0,0.05)")}
@@ -46,13 +46,15 @@ export default function VisitCard({ visit, onClick }) {
               width: "32px",
               height: "32px",
               borderRadius: "50%",
-              background: "rgba(255,255,255,0.9)",
+              background: "rgba(255, 255, 255, 0.20)",
+              backdropFilter: "blur(2px)",
+              WebkitBackdropFilter: "blur(16px)",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
             }}
           >
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#374151" strokeWidth="2">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2">
               <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
             </svg>
           </div>

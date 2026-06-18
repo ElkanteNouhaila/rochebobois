@@ -21,8 +21,7 @@ export default function StatCard({ label, value, icon }) {
   return (
     <div
       style={{
-        background: "rgba(255,255,255,0.20)",
-        border: "1px solid rgba(255,255,255,0.4)",
+        background: "rgba(255,255,255,0.30)",
         boxShadow: "0 8px 24px rgba(0,0,0,0.05)",
         borderRadius: "16px",
         padding: "20px 22px",
