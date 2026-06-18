@@ -2,17 +2,7 @@ import { Mail, Bell, ChevronDown } from "lucide-react";
 
 export default function Navbar() {
   return (
-    <header
-      style={{
-        height: "72px",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "space-between",
-        padding: "0 28px",
-        flexShrink: 0,
-        borderBottom: "1px solid rgba(255,255,255,0.4)",
-      }}
-    >
+    <header className="navbar">
       <div style={{ display: "flex", alignItems: "baseline", gap: "1px" }}>
         <span style={{ fontWeight: 900, fontSize: "22px", color: "#111827", letterSpacing: "-0.5px" }}>
           roche
