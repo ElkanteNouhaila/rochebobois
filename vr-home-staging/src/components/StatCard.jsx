@@ -21,13 +21,14 @@ export default function StatCard({ label, value, icon }) {
   return (
     <div
       style={{
-        background: "#fff",
+        background: "rgba(255,255,255,0.20)",
+        border: "1px solid rgba(255,255,255,0.4)",
+        boxShadow: "0 8px 24px rgba(0,0,0,0.05)",
         borderRadius: "16px",
         padding: "20px 22px",
         display: "flex",
         flexDirection: "column",
         gap: "20px",
-        boxShadow: "0 1px 3px rgba(0,0,0,0.06)",
       }}
     >
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start" }}>
@@ -40,7 +41,9 @@ export default function StatCard({ label, value, icon }) {
             width: "40px",
             height: "40px",
             borderRadius: "10px",
-            background: "#f3f4f6",
+            background: "rgba(255,255,255,0.45)",
+            backdropFilter: "blur(10px)",
+            border: "1px solid rgba(255,255,255,0.3)",
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
