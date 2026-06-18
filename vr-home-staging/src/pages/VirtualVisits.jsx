@@ -38,7 +38,7 @@ export default function VirtualVisits() {
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             style={{
-              width: "100%",
+              width: "70%",
               padding: "11px 14px 11px 40px",
               borderRadius: "12px",
               border: "none",
@@ -55,7 +55,7 @@ export default function VirtualVisits() {
           style={{
             display: "flex",
             alignItems: "center",
-            gap: "8px",
+            gap: "7px",
             padding: "11px 18px",
             borderRadius: "12px",
             border: "none",
@@ -85,7 +85,6 @@ export default function VirtualVisits() {
             fontSize: "14px",
             fontWeight: 600,
             cursor: "pointer",
-            marginLeft: "auto",
           }}
         >
           <Plus size={16} />
@@ -95,7 +94,9 @@ export default function VirtualVisits() {
 
       <div
         style={{
-          background: "#fff",
+          background: "rgba(255, 255, 255, 0.1)",
+          backdropFilter: "blur(16px)",
+          WebkitBackdropFilter: "blur(16px)",
           borderRadius: "16px",
           overflow: "hidden",
           boxShadow: "0 1px 3px rgba(0,0,0,0.06)",
@@ -141,8 +142,12 @@ export default function VirtualVisits() {
               cursor: "pointer",
               transition: "background 0.1s",
             }}
-            onMouseEnter={(e) => (e.currentTarget.style.background = "#f9fafb")}
-            onMouseLeave={(e) => (e.currentTarget.style.background = "transparent")}
+            onMouseEnter={(e) =>
+              (e.currentTarget.style.background = "rgba(255,255,255,0.35)")
+            }
+            onMouseLeave={(e) =>
+              (e.currentTarget.style.background = "transparent")
+            }
           >
             <div onClick={(e) => { e.stopPropagation(); toggleSelect(visit.id); }}>
               <input

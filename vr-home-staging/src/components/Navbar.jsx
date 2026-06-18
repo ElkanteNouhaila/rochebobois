@@ -4,10 +4,10 @@ export default function Navbar() {
   return (
     <header className="navbar">
       <div style={{ display: "flex", alignItems: "baseline", gap: "1px" }}>
-        <span style={{ fontWeight: 900, fontSize: "22px", color: "#111827", letterSpacing: "-0.5px" }}>
+        <span style={{ fontWeight: 999, fontSize: "30px", color: "#111827", letterSpacing: "-0.5px" }}>
           roche
         </span>
-        <span style={{ fontWeight: 400, fontSize: "22px", color: "#111827", letterSpacing: "-0.5px" }}>
+        <span style={{ fontWeight: 400, fontSize: "30px", color: "#111827", letterSpacing: "-0.5px" }}>
           bobois
         </span>
         <span
@@ -30,10 +30,7 @@ export default function Navbar() {
           display: "flex",
           alignItems: "center",
           gap: "10px",
-          background: "rgba(255,255,255,0.75)",
-          borderRadius: "999px",
           padding: "6px 8px 6px 12px",
-          boxShadow: "0 1px 4px rgba(0,0,0,0.06)",
         }}
       >
         <button
@@ -41,7 +38,7 @@ export default function Navbar() {
             width: "36px",
             height: "36px",
             borderRadius: "50%",
-            background: "#4b5563",
+            background: "rgba(255, 255, 255, 0.30)",
             border: "none",
             cursor: "pointer",
             display: "flex",
@@ -49,7 +46,7 @@ export default function Navbar() {
             justifyContent: "center",
           }}
         >
-          <Mail size={16} color="#fff" />
+          <Mail size={16} color="gray" />
         </button>
 
         <div style={{ position: "relative" }}>
@@ -58,7 +55,7 @@ export default function Navbar() {
               width: "36px",
               height: "36px",
               borderRadius: "50%",
-              background: "#4b5563",
+              background: "rgba(255, 255, 255, 0.30)",
               border: "none",
               cursor: "pointer",
               display: "flex",
@@ -66,7 +63,7 @@ export default function Navbar() {
               justifyContent: "center",
             }}
           >
-            <Bell size={16} color="#fff" />
+            <Bell size={16} color="gray" />
           </button>
           <span
             style={{
@@ -83,7 +80,6 @@ export default function Navbar() {
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
-              border: "2px solid #fff",
             }}
           >
             1
@@ -106,7 +102,7 @@ export default function Navbar() {
           />
           <div style={{ textAlign: "left", lineHeight: 1.3 }}>
             <div style={{ fontSize: "13px", fontWeight: 600, color: "#111827" }}>Ali Hraich</div>
-            <div style={{ fontSize: "11px", color: "#6b7280" }}>Admin</div>
+            <div style={{ fontSize: "11px", color: "gray" }}>Admin</div>
           </div>
           <ChevronDown size={16} color="#9ca3af" />
         </div>
