@@ -56,17 +56,23 @@ body {
   backdrop-filter: blur(16px);
   border-radius: 20px;
   padding: 16px;
-  margin-right:  20px;
+  margin-right: 20px;
   border: 1px solid rgba(255,255,255,0.4);
   box-shadow: 0 10px 30px rgba(0,0,0,0.06);
   flex-shrink: 0;
-}
 
+  display: flex;
+  flex-direction: column;
+
+  max-height: calc(100vh - 10px);
+  overflow: hidden;
+}
 
 .app-gradient {
   min-height: 100vh;
   background: linear-gradient(135deg, #E7F1FA, #C7E1F1, #F2ECF9);
-  padding: 24px;
+  padding: 24px 90px;
+  
   display: flex;
   flex-direction: column;
   gap: 20px; 
@@ -75,7 +81,7 @@ body {
 /* Outer glass shell */
 .app-shell {
   width: 100%;
-  min-height: calc(100svh - 40px);
+  min-height: calc(100svh - 90px);
   display: flex;
   flex-direction: column;
 }

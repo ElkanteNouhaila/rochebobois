@@ -78,6 +78,7 @@ export default function Sidebar() {
           background: "#fff",
           borderRadius: "14px",
           boxShadow: "0 1px 4px rgba(0,0,0,0.06)",
+          marginTop: "auto"
         }}
       >
         <p style={{ fontSize: "12px", color: "#6b7280", marginBottom: "12px", lineHeight: 1.5 }}>
