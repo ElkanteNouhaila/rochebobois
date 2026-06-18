@@ -66,7 +66,7 @@ export function AddCatalogCard() {
       style={{
         background: "#dce4ed",
         borderRadius: "16px",
-        height: "196px",
+        height: "199px",
         display: "flex",
         alignItems: "center",
         justifyContent: "center",

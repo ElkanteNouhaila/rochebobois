@@ -13,7 +13,7 @@ export default function FurnitureCatalog() {
   return (
     <div style={{ display: "flex", flexDirection: "column", gap: "24px" }}>
       <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
-        <div style={{ flex: 1, position: "relative", maxWidth: "520px" }}>
+        <div style={{ flex: "0 0 40%", position: "relative"}}>
           <Search
             size={16}
             color="#9ca3af"
@@ -26,7 +26,7 @@ export default function FurnitureCatalog() {
             onChange={(e) => setQuery(e.target.value)}
             style={{
               width: "100%",
-              padding: "11px 14px 11px 40px",
+              padding: "11px 14px 11px 30px",
               borderRadius: "12px",
               border: "none",
               background: "#fff",
@@ -48,7 +48,6 @@ export default function FurnitureCatalog() {
             fontSize: "14px",
             fontWeight: 600,
             cursor: "pointer",
-            marginLeft: "auto",
           }}
         >
           Create
