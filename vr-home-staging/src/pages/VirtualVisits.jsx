@@ -25,8 +25,8 @@ export default function VirtualVisits() {
 
   return (
     <div style={{ display: "flex", flexDirection: "column", gap: "20px" }}>
-      <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
-        <div style={{ flex: 1, position: "relative", maxWidth: "480px" }}>
+      <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+        <div style={{ flex: "0 0 30%", position: "relative"}}>
           <Search
             size={16}
             color="#9ca3af"
@@ -38,7 +38,7 @@ export default function VirtualVisits() {
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             style={{
-              width: "70%",
+              width: "100%",
               padding: "11px 14px 11px 40px",
               borderRadius: "12px",
               border: "none",
@@ -172,7 +172,7 @@ export default function VirtualVisits() {
                     position: "absolute",
                     inset: 0,
                     borderRadius: "10px",
-                    background: "rgba(0,0,0,0.28)",
+                    background: "rgba(0,0,0,0.15)",
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
@@ -183,13 +183,15 @@ export default function VirtualVisits() {
                       width: "28px",
                       height: "28px",
                       borderRadius: "50%",
-                      background: "rgba(255,255,255,0.9)",
+                      background: "rgba(255, 255, 255, 0.20)",
+                      backdropFilter: "blur(2px)",
+                      WebkitBackdropFilter: "blur(16px)",
                       display: "flex",
                       alignItems: "center",
                       justifyContent: "center",
                     }}
                   >
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#374151" strokeWidth="2">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2">
                       <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
                     </svg>
                   </div>
