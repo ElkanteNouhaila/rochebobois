@@ -85,6 +85,122 @@ export const stats = [
     },
   ];
   
+  export const features = [
+    {
+      id: 1,
+      title: "3D Virtual Staging",
+      description: "Transform empty rooms into beautifully furnished spaces with photorealistic 3D renders.",
+      icon: "box",
+    },
+    {
+      id: 2,
+      title: "Style Catalog",
+      description: "Browse hundreds of premium furniture pieces from the Roche Bobois collection.",
+      icon: "sofa",
+    },
+    {
+      id: 3,
+      title: "Client Collaboration",
+      description: "Share interactive previews with clients and gather feedback in real time.",
+      icon: "users",
+    },
+  ];
+
+  export const styles = [
+    {
+      id: 1,
+      name: "Modern Minimalist",
+      description: "Clean lines, neutral tones, and understated elegance.",
+      image: "https://images.unsplash.com/photo-1600210492493-0946911123ea?w=400&h=300&fit=crop",
+    },
+    {
+      id: 2,
+      name: "Contemporary Luxury",
+      description: "Rich textures, bold accents, and designer statement pieces.",
+      image: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=400&h=300&fit=crop",
+    },
+    {
+      id: 3,
+      name: "Scandinavian Warmth",
+      description: "Light woods, soft fabrics, and a cozy inviting atmosphere.",
+      image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=400&h=300&fit=crop",
+    },
+  ];
+
+  export const projects = [
+    {
+      id: 1,
+      name: "Rabat Apartment – Living Room",
+      client: "Youssef Alami",
+      style: "Modern Minimalist",
+      status: "In Progress",
+      image: "https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=600&h=400&fit=crop",
+      rooms: 3,
+      updatedAt: "2026-06-17",
+    },
+    {
+      id: 2,
+      name: "Casablanca Penthouse – Master Suite",
+      client: "Layla El Idrissi",
+      style: "Contemporary Luxury",
+      status: "Completed",
+      image: "https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?w=600&h=400&fit=crop",
+      rooms: 2,
+      updatedAt: "2026-06-15",
+    },
+  ];
+
+  export const catalogCategories = [
+    {
+      id: 1,
+      name: "Chairs",
+      itemCount: 5,
+      image: "https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?w=400&h=280&fit=crop",
+    },
+    {
+      id: 2,
+      name: "Chairs",
+      itemCount: 5,
+      image: "https://images.unsplash.com/photo-1506439773649-6e0eb8cfb237?w=400&h=280&fit=crop",
+    },
+    {
+      id: 3,
+      name: "Bed",
+      itemCount: 0,
+      image: "https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=400&h=280&fit=crop",
+    },
+    {
+      id: 4,
+      name: "Desk",
+      itemCount: 5,
+      image: "https://images.unsplash.com/photo-1518455027359-f3f8164ba6bd?w=400&h=280&fit=crop",
+    },
+    {
+      id: 5,
+      name: "Sofa chair",
+      itemCount: 5,
+      image: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=400&h=280&fit=crop",
+    },
+    {
+      id: 6,
+      name: "Lamps",
+      itemCount: 5,
+      image: "https://images.unsplash.com/photo-1507473888944-1857a2f4ec0a?w=400&h=280&fit=crop",
+    },
+    {
+      id: 7,
+      name: "Sofa",
+      itemCount: 5,
+      image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=400&h=280&fit=crop",
+    },
+    {
+      id: 8,
+      name: "buffet cabinet",
+      itemCount: 5,
+      image: "https://images.unsplash.com/photo-1600210492493-0946911123ea?w=400&h=280&fit=crop",
+    },
+  ];
+
   export const meetings = [
     {
       id: 1,

@@ -19,6 +19,11 @@ const statusConfig = {
     bg: "#eff6ff",
     text: "#2563eb",
   },
+  "In Progress": {
+    dot: "#3b82f6",
+    bg: "#eff6ff",
+    text: "#2563eb",
+  },
   Approved: {
     dot: "#22c55e",
     bg: "#f0fdf4",

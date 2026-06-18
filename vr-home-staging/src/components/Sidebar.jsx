@@ -1,8 +1,8 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import {
   LayoutDashboard,
-  Eye,
-  Armchair,
+  Home,
+  BedDouble,
   Video,
   Users,
   Plus,
@@ -10,26 +10,28 @@ import {
 
 const navItems = [
   { label: "Dashboard", icon: LayoutDashboard, to: "/" },
-  { label: "Virtual visits", icon: Eye, to: "/virtual-visits" },
-  { label: "Furniture Catalog", icon: Armchair, to: "/catalog" },
+  { label: "Virtual visits", icon: Home, to: "/virtual-visits" },
+  { label: "Furniture Catalog", icon: BedDouble, to: "/catalog" },
   { label: "Virtual Meeting", icon: Video, to: "/meetings", badge: 3 },
   { label: "Team", icon: Users, to: "/team" },
 ];
 
 export default function Sidebar() {
+  const navigate = useNavigate();
+
   return (
     <aside
       style={{
-        width: "200px",
+        width: "220px",
         flexShrink: 0,
-        background: "transparent",
+        background: "#d4dde8",
         display: "flex",
         flexDirection: "column",
-        padding: "24px 0",
+        padding: "20px 12px",
         gap: "4px",
       }}
     >
-      <nav style={{ flex: 1, display: "flex", flexDirection: "column", gap: "2px" }}>
+      <nav style={{ flex: 1, display: "flex", flexDirection: "column", gap: "4px" }}>
         {navItems.map(({ label, icon: Icon, to, badge }) => (
           <NavLink
             key={to}
@@ -39,21 +41,20 @@ export default function Sidebar() {
               display: "flex",
               alignItems: "center",
               gap: "10px",
-              padding: "10px 16px",
+              padding: "11px 14px",
               borderRadius: "12px",
               textDecoration: "none",
               fontSize: "14px",
               fontWeight: isActive ? 600 : 400,
-              color: isActive ? "#111827" : "#6b7280",
+              color: isActive ? "#111827" : "#4b5563",
               background: isActive ? "#fff" : "transparent",
-              boxShadow: isActive ? "0 1px 4px rgba(0,0,0,0.08)" : "none",
+              boxShadow: isActive ? "0 2px 8px rgba(0,0,0,0.08)" : "none",
               transition: "all 0.15s",
-              position: "relative",
             })}
           >
             {({ isActive }) => (
               <>
-                <Icon size={18} color={isActive ? "#111827" : "#9ca3af"} />
+                <Icon size={18} color={isActive ? "#111827" : "#6b7280"} strokeWidth={isActive ? 2.2 : 1.8} />
                 <span style={{ flex: 1 }}>{label}</span>
                 {badge && (
                   <span
@@ -80,27 +81,26 @@ export default function Sidebar() {
         ))}
       </nav>
 
-      {/* Bottom hint + button */}
       <div
         style={{
-          margin: "0 8px",
-          padding: "14px",
-          background: "#fff",
+          margin: "8px 4px 0",
+          padding: "16px",
+          background: "rgba(255,255,255,0.65)",
           borderRadius: "14px",
-          boxShadow: "0 1px 4px rgba(0,0,0,0.06)",
         }}
       >
-        <p style={{ fontSize: "12px", color: "#6b7280", marginBottom: "12px", lineHeight: 1.5 }}>
+        <p style={{ fontSize: "12px", color: "#6b7280", margin: "0 0 14px", lineHeight: 1.5 }}>
           Creating or adding new virtual visits couldn't be easier
         </p>
         <button
+          onClick={() => navigate("/create")}
           style={{
             width: "100%",
             background: "#111827",
             color: "#fff",
             border: "none",
             borderRadius: "10px",
-            padding: "10px",
+            padding: "11px",
             fontSize: "13px",
             fontWeight: 600,
             cursor: "pointer",

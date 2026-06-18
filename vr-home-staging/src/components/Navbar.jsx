@@ -1,19 +1,18 @@
-import { Mail, Bell } from "lucide-react";
+import { Mail, Bell, ChevronDown } from "lucide-react";
 
 export default function Navbar() {
   return (
     <header
       style={{
-        height: "64px",
+        height: "72px",
         display: "flex",
         alignItems: "center",
         justifyContent: "space-between",
-        padding: "0 32px",
-        background: "transparent",
+        padding: "0 28px",
         flexShrink: 0,
+        borderBottom: "1px solid rgba(255,255,255,0.4)",
       }}
     >
-      {/* Logo */}
       <div style={{ display: "flex", alignItems: "baseline", gap: "1px" }}>
         <span style={{ fontWeight: 900, fontSize: "22px", color: "#111827", letterSpacing: "-0.5px" }}>
           roche
@@ -36,40 +35,48 @@ export default function Navbar() {
         </span>
       </div>
 
-      {/* Right icons */}
-      <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
+      <div
+        style={{
+          display: "flex",
+          alignItems: "center",
+          gap: "10px",
+          background: "rgba(255,255,255,0.75)",
+          borderRadius: "999px",
+          padding: "6px 8px 6px 12px",
+          boxShadow: "0 1px 4px rgba(0,0,0,0.06)",
+        }}
+      >
         <button
           style={{
-            width: "40px",
-            height: "40px",
+            width: "36px",
+            height: "36px",
             borderRadius: "50%",
-            background: "#fff",
+            background: "#4b5563",
             border: "none",
             cursor: "pointer",
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
-            boxShadow: "0 1px 4px rgba(0,0,0,0.08)",
           }}
         >
-          <Mail size={18} color="#374151" />
+          <Mail size={16} color="#fff" />
         </button>
+
         <div style={{ position: "relative" }}>
           <button
             style={{
-              width: "40px",
-              height: "40px",
+              width: "36px",
+              height: "36px",
               borderRadius: "50%",
-              background: "#fff",
+              background: "#4b5563",
               border: "none",
               cursor: "pointer",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
-              boxShadow: "0 1px 4px rgba(0,0,0,0.08)",
             }}
           >
-            <Bell size={18} color="#374151" />
+            <Bell size={16} color="#fff" />
           </button>
           <span
             style={{
@@ -86,17 +93,33 @@ export default function Navbar() {
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
-              border: "2px solid #e8ecf4",
+              border: "2px solid #fff",
             }}
           >
             1
           </span>
         </div>
-        <img
-          src="https://i.pravatar.cc/40?img=11"
-          alt="Profile"
-          style={{ width: "40px", height: "40px", borderRadius: "50%", objectFit: "cover", cursor: "pointer" }}
-        />
+
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            gap: "10px",
+            paddingLeft: "4px",
+            cursor: "pointer",
+          }}
+        >
+          <img
+            src="https://i.pravatar.cc/40?img=11"
+            alt="Ali Hraich"
+            style={{ width: "36px", height: "36px", borderRadius: "50%", objectFit: "cover" }}
+          />
+          <div style={{ textAlign: "left", lineHeight: 1.3 }}>
+            <div style={{ fontSize: "13px", fontWeight: 600, color: "#111827" }}>Ali Hraich</div>
+            <div style={{ fontSize: "11px", color: "#6b7280" }}>Admin</div>
+          </div>
+          <ChevronDown size={16} color="#9ca3af" />
+        </div>
       </div>
     </header>
   );

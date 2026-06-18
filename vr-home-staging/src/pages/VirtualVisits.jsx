@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { Search, SlidersHorizontal, Plus, MapPin } from "lucide-react";
+import { Search, SlidersHorizontal, Plus, MapPin, MoreVertical } from "lucide-react";
 import { visits } from "../data/mockData.js";
 import StatusBadge from "../components/StatusBadge.jsx";
 import UserAvatars from "../components/UserAvatars.jsx";
@@ -11,9 +11,7 @@ export default function VirtualVisits() {
   const navigate = useNavigate();
 
   const filtered = visits.filter((v) =>
-    `${v.client} ${v.address} ${v.propertyType}`
-      .toLowerCase()
-      .includes(query.toLowerCase())
+    `${v.client} ${v.address} ${v.propertyType}`.toLowerCase().includes(query.toLowerCase())
   );
 
   const toggleSelect = (id) => {
@@ -23,21 +21,12 @@ export default function VirtualVisits() {
   };
 
   const allSelected = filtered.length > 0 && filtered.every((v) => selected.includes(v.id));
-  const toggleAll = () =>
-    setSelected(allSelected ? [] : filtered.map((v) => v.id));
+  const toggleAll = () => setSelected(allSelected ? [] : filtered.map((v) => v.id));
 
   return (
     <div style={{ display: "flex", flexDirection: "column", gap: "20px" }}>
-      {/* Toolbar */}
       <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
-        {/* Search */}
-        <div
-          style={{
-            flex: 1,
-            position: "relative",
-            maxWidth: "480px",
-          }}
-        >
+        <div style={{ flex: 1, position: "relative", maxWidth: "480px" }}>
           <Search
             size={16}
             color="#9ca3af"
@@ -50,45 +39,45 @@ export default function VirtualVisits() {
             onChange={(e) => setQuery(e.target.value)}
             style={{
               width: "100%",
-              padding: "10px 14px 10px 40px",
+              padding: "11px 14px 11px 40px",
               borderRadius: "12px",
-              border: "1.5px solid #e5e7eb",
+              border: "none",
               background: "#fff",
               fontSize: "14px",
               color: "#111827",
               outline: "none",
-              boxSizing: "border-box",
+              boxShadow: "0 1px 3px rgba(0,0,0,0.06)",
             }}
           />
         </div>
 
-        {/* Filter */}
         <button
           style={{
             display: "flex",
             alignItems: "center",
             gap: "8px",
-            padding: "10px 18px",
+            padding: "11px 18px",
             borderRadius: "12px",
-            border: "1.5px solid #e5e7eb",
+            border: "none",
             background: "#fff",
             fontSize: "14px",
             fontWeight: 500,
             cursor: "pointer",
             color: "#374151",
+            boxShadow: "0 1px 3px rgba(0,0,0,0.06)",
           }}
         >
           <SlidersHorizontal size={16} />
           Filter
         </button>
 
-        {/* New visit */}
         <button
+          onClick={() => navigate("/create")}
           style={{
             display: "flex",
             alignItems: "center",
             gap: "8px",
-            padding: "10px 18px",
+            padding: "11px 18px",
             borderRadius: "12px",
             border: "none",
             background: "#111827",
@@ -96,6 +85,7 @@ export default function VirtualVisits() {
             fontSize: "14px",
             fontWeight: 600,
             cursor: "pointer",
+            marginLeft: "auto",
           }}
         >
           <Plus size={16} />
@@ -103,28 +93,27 @@ export default function VirtualVisits() {
         </button>
       </div>
 
-      {/* Table */}
       <div
         style={{
           background: "#fff",
           borderRadius: "16px",
           overflow: "hidden",
-          boxShadow: "0 1px 4px rgba(0,0,0,0.06)",
+          boxShadow: "0 1px 3px rgba(0,0,0,0.06)",
         }}
       >
-        {/* Table header */}
         <div
           style={{
             display: "grid",
-            gridTemplateColumns: "48px 60px 1fr 160px 80px",
-            padding: "12px 20px",
+            gridTemplateColumns: "40px 56px 1fr 140px 90px 32px",
+            padding: "14px 20px",
             borderBottom: "1px solid #f3f4f6",
             fontSize: "13px",
             fontWeight: 600,
             color: "#6b7280",
+            alignItems: "center",
           }}
         >
-          <div style={{ display: "flex", alignItems: "center" }}>
+          <div>
             <input
               type="checkbox"
               checked={allSelected}
@@ -136,17 +125,17 @@ export default function VirtualVisits() {
           <div>Property</div>
           <div>Status</div>
           <div>Assigned</div>
+          <div />
         </div>
 
-        {/* Rows */}
         {filtered.map((visit) => (
           <div
             key={visit.id}
             onClick={() => navigate(`/virtual-visits/${visit.id}`)}
             style={{
               display: "grid",
-              gridTemplateColumns: "48px 60px 1fr 160px 80px",
-              padding: "14px 20px",
+              gridTemplateColumns: "40px 56px 1fr 140px 90px 32px",
+              padding: "16px 20px",
               borderBottom: "1px solid #f9fafb",
               alignItems: "center",
               cursor: "pointer",
@@ -155,7 +144,6 @@ export default function VirtualVisits() {
             onMouseEnter={(e) => (e.currentTarget.style.background = "#f9fafb")}
             onMouseLeave={(e) => (e.currentTarget.style.background = "transparent")}
           >
-            {/* Checkbox */}
             <div onClick={(e) => { e.stopPropagation(); toggleSelect(visit.id); }}>
               <input
                 type="checkbox"
@@ -165,31 +153,41 @@ export default function VirtualVisits() {
               />
             </div>
 
-            {/* ID */}
             <div style={{ fontSize: "13px", color: "#6b7280" }}>{visit.id}</div>
 
-            {/* Property */}
             <div style={{ display: "flex", alignItems: "center", gap: "14px" }}>
               <div style={{ position: "relative", flexShrink: 0 }}>
                 <img
                   src={visit.image}
                   alt={visit.client}
-                  style={{ width: "72px", height: "56px", borderRadius: "10px", objectFit: "cover" }}
+                  style={{ width: "80px", height: "64px", borderRadius: "10px", objectFit: "cover" }}
                 />
                 <div
                   style={{
                     position: "absolute",
                     inset: 0,
                     borderRadius: "10px",
-                    background: "rgba(0,0,0,0.25)",
+                    background: "rgba(0,0,0,0.28)",
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
                   }}
                 >
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="white">
-                    <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
-                  </svg>
+                  <div
+                    style={{
+                      width: "28px",
+                      height: "28px",
+                      borderRadius: "50%",
+                      background: "rgba(255,255,255,0.9)",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                    }}
+                  >
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#374151" strokeWidth="2">
+                      <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
+                    </svg>
+                  </div>
                 </div>
               </div>
               <div>
@@ -215,27 +213,32 @@ export default function VirtualVisits() {
               </div>
             </div>
 
-            {/* Status */}
             <div>
               <StatusBadge status={visit.status} />
             </div>
 
-            {/* Assignees */}
             <div>
               <UserAvatars assignees={visit.assignees} />
             </div>
+
+            <button
+              onClick={(e) => e.stopPropagation()}
+              style={{
+                background: "none",
+                border: "none",
+                cursor: "pointer",
+                padding: "4px",
+                display: "flex",
+                color: "#9ca3af",
+              }}
+            >
+              <MoreVertical size={18} />
+            </button>
           </div>
         ))}
 
         {filtered.length === 0 && (
-          <div
-            style={{
-              padding: "48px",
-              textAlign: "center",
-              color: "#9ca3af",
-              fontSize: "14px",
-            }}
-          >
+          <div style={{ padding: "48px", textAlign: "center", color: "#9ca3af", fontSize: "14px" }}>
             No visits found matching "{query}"
           </div>
         )}
